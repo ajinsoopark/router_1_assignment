@@ -20,15 +20,6 @@ class RandomImg extends Component {
             this.setState({ dogImages:newDogArr })
         })
     };
-    
-    routeFromSelect = () => {
-        const { history } = this.props;
-        const { selectedValue } = this.state;
-        if (selectedValue) {
-            debugger
-            history.push(`/random/${selectedValue}`)
-        }
-    }
 
     componentDidMount () {
        if (this.props.match.params.num) {
@@ -65,7 +56,7 @@ class RandomImg extends Component {
         for (let i = 2; i <= 100; i++) {
             optionsArr.push(i)
         }
-        return optionsArr.map(num => <option value={ num }>{ num }</option>)
+        return optionsArr.map((num, i) => <option key={ i } value={ num }>{ num }</option>)
     }
 
     render () {
@@ -82,6 +73,7 @@ class RandomImg extends Component {
                 </div> 
                 <DisplayDogs
                  dogArr={ dogImages }
+                 addFavImage={ this.props.addFavImage }
                  />
             </React.Fragment>
         )

@@ -45,7 +45,7 @@ class BreedImg extends Component {
 
     render () {
         const { selectedBreed, breedImages } = this.state;
-        console.log(this.state)
+       
         return (
             <div className='randomBreed'>
                 <label htmlFor='breedSelector'>Select a breed</label>
@@ -56,6 +56,7 @@ class BreedImg extends Component {
                  <button type='button' name='button' onClick={ this.handleButton }>Random Breed</button>
                  <DisplayDogs
                   dogArr={ breedImages }
+                  addFavImage={ this.props.addFavImage }
                   />
             </div>
         )

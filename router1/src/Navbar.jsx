@@ -10,6 +10,9 @@ const Navbar = (props) => {
             <div className='randomLink'>
                 <Link to={ '/random' }>Random Dog</Link>
             </div>
+            <div className='favoritesLink'>
+                <Link to={ '/favorite' }>Favorites</Link>
+            </div>
         </nav>
     )
 }
